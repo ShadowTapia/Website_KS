@@ -1,0 +1,9 @@
+User-agent: *
+Disallow:/mail/
+Disallow:/res/
+Disallow:/Scripts/
+Disallow:/css/
+Disallow:/style/
+Disallow:/images/
+Disallow:/data1/
+Disallow:/engine1/

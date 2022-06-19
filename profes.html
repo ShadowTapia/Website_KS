@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset=utf-8 />
+<meta name=description content="Colegio de Enseñanza Parvularia, Básica y Científico Humanista, ubicado en el sector del Mirador de Reñaca."/>
+<meta name=keywords content="Colegio Particular Subvencionado, Escuela, Liceo, Jardín Infantil."/>
+<meta name=author content="Kingstown School."/>
+<meta name=owner content="Sociedad Educacional Bosques de Santa Julia S.A."/>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<meta name=robots content="index,follow"/>
+<title>The Kingstown School</title>
+<link href="css/style.css" rel=stylesheet type="text/css"/>
+<link href="css/styletable.css" rel=stylesheet type="text/css"/>
+<link rel=stylesheet type="text/css" href="style/style.css" media="screen,print"/>
+<!--[if IE]>
+<script>
+  document.createElement('header');
+  document.createElement('footer');
+  document.createElement('section');
+  document.createElement('nav');
+</script>
+<![endif]-->
+<!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<script async type="text/javascript" src="Scripts/swfobject_modified.js"></script>
+<script type="text/javascript" src="res/jquery.js"></script>
+<script type="text/javascript" src="res/x5engine.js"></script>
+<script type="text/javascript" src="res/x5cartengine.js"></script>
+<script type="text/javascript" src="res/jquery.scrollTop.js"></script>
+<script src="https://sistemateced.cl/public/assets/js/jqueryrut.js"></script>	
+<script async type="text/javascript" src="res/l10n.js"></script>
+<script type="text/javascript" src="res/x5settings.js"></script>
+<script type="text/javascript" charset="utf-8" src="Scripts/footerks_edgePreload.js"></script>
+<script>$(function(){scrollTop({color:"grey",top:400,time:500,position:"middle",speed:300});});</script>
+<script>
+$(document).ready(function() {
+
+	$("input#login_username").rut({
+		formatOn: 'keyup',
+	    minimumLength: 8, // validar largo mínimo; default: 2
+		validateOn: 'change' // si no se quiere validar, pasar null
+	});
+
+	// es posible pasar varios eventos separados por espacio, útil
+	// para validar el rut aún cuando el browser autocomplete el campo
+	$("input#login_username").rut({validateOn: 'change keyup'});
+
+	// si no se quiere mostrar el punto para separador de miles, 
+	// pasar la opción useThousandsSeparator : false
+	$("input#login_username").rut({useThousandsSeparator : true});
+
+$("#btn_submit").click(function(event){
+        event.preventDefault();
+        if($("#login_username").val().length==0)
+        {
+        	alert('Ingrese RUT del Usuario',"Faltan datos");
+			return false;
+        }
+        if($("#login_pass").val().length==0)
+        {
+        	alert('Ingrese Password',"Faltan datos");
+			return false;
+        }
+    	event.preventDefault();
+    	var main=$("#main");
+    	//scroll to top
+    	main.animate({
+    		scrollTop: 0
+    	}, 500);
+    	main.addClass("slideDown");
+
+    	// send username and password to php check login
+        var url = "https://sistemateced.cl/public/login/ingresar";      
+    	$.ajax({
+    		url: url,
+             data: $("#frm_login").serialize(), 
+             type: "POST", 
+             dataType: 'json',
+    		success: function (e) {
+                console.log(e.status);
+
+                 if(e.status == 1) 
+                 {
+                    $("#frm_login").submit();
+
+                 } else  {
+                     alert("Error");
+                 }
+    		}
+    	});
+
+    });
+});
+</script>	
+<script>function MM_preloadImages(){var d=document;if(d.images){if(!d.MM_p)d.MM_p=new Array();var i,j=d.MM_p.length,a=MM_preloadImages.arguments;for(i=0;i<a.length;i++)
+if(a[i].indexOf("#")!=0){d.MM_p[j]=new Image;d.MM_p[j++].src=a[i];}}}
+function MM_swapImgRestore(){var i,x,a=document.MM_sr;for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++)x.src=x.oSrc;}
+function MM_findObj(n,d){var p,i,x;if(!d)d=document;if((p=n.indexOf("?"))>0&&parent.frames.length){d=parent.frames[n.substring(p+1)].document;n=n.substring(0,p);}
+if(!(x=d[n])&&d.all)x=d.all[n];for(i=0;!x&&i<d.forms.length;i++)x=d.forms[i][n];for(i=0;!x&&d.layers&&i<d.layers.length;i++)x=MM_findObj(n,d.layers[i].document);if(!x&&d.getElementById)x=d.getElementById(n);return x;}
+function MM_swapImage(){var i,j=0,x,a=MM_swapImage.arguments;document.MM_sr=new Array;for(i=0;i<(a.length-2);i+=3)
+if((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x;if(!x.oSrc)x.oSrc=x.src;x.src=a[i+2];}}</script>
+<link rel=icon href=favicon.ico type="image/vnd.microsoft.icon"/>
+<style>
+        .edgeLoad-EDGE-11664260 { visibility:hidden; }
+</style>
+<style>
+	/* latin */
+@font-face {
+  font-family: 'Graduate';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Graduate'), local('Graduate-Regular'), url(http://fonts.gstatic.com/s/graduate/v4/xBquLOzic3rRbJsTs3BiEPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oleo Script'), local('OleoScript-Regular'), url(http://fonts.gstatic.com/s/oleoscript/v5/_weQNDK6Uf40CiGFKBBUjiYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oleo Script'), local('OleoScript-Regular'), url(http://fonts.gstatic.com/s/oleoscript/v5/_weQNDK6Uf40CiGFKBBUjo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+</style>
+</head>
+<body id=body5 onload="MM_preloadImages('images/bntCta.fw.png','images/btnsimce.fw.png','images/btnPro.fw.png','images/btnRegla.fw.png','images/btnIngles.fw.png','images/btnActi.fw.png','images/btnProfe.fw.png','images/btnReu.fw.png')"><div class=container>
+<header>
+<div id=logo><a href="http://www.kingstownschool.cl" target=_self><img src="images/logo.png" alt="Kingstown Logo" border=0 width="97" height="60" /></a></div>
+<h2>THE KINGSTOWN SCHOOL</h2>
+<ul id=menu>
+<li class=menu_right><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'mail/formulario.html', width: 500, height: 550, text: ''}]}, 0, this);">Contacto</a>
+</li>
+ <li class="menu_right"><a href="#" onClick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/circu/22/admision.pdf', width: 870, height: 560, text: ''}]}, 0, this);" class="dropF">Admisión 2022</a>
+            	
+            </li> 
+<li class=menu_right><a href="#" class=drop>C.G.P.A.</a>
+<div class=dropdown_3columns>
+<div class=col_1>
+<ul class=greybox>
+<li><a href="" onclick="x5engine.utils.location('cgpa.html'); return false;">Acerca</a></li>
+</ul>
+</div>
+<div class=col_1>
+<ul class=greybox>
+<li><a href="" onclick="x5engine.utils.location('CGPAcircu.html'); return false;">Documentos</a></li>
+</ul>
+</div>
+<div class=col_1>
+<ul class=greybox>
+<li><a href="" onclick="x5engine.utils.location('CGPAmedia.html'); return false;">Media</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class=menu_right><a href="#" class=drop>Profesores</a>
+<div class=dropdown_2columns>
+<div class=col_1>
+<ul class=greybox>
+<li><a href=profes.html onclick="x5engine.utils.location('profes.html'); return false;">Staff</a></li>
+</ul>
+</div>
+<!--<div class=col_1>
+<ul class=greybox>
+<li><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/hatencion19.pdf', width: 870, height: 530, text: ''}]}, 0, this);">H. Atención</a></li>
+<!--<li><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/hatencion15.pdf', width: 870, height: 530, text: ''}]}, 0, this);">H. Atención</a></li>
+</ul> 
+</div>
+--></div>
+</li>
+<li class=menu_right><a href="#" class=drop>Talleres</a>
+<div class=dropdown_2columns>
+<div class=col_1>
+<ul class=greybox>
+<li><a href=actividades.html onclick="x5engine.utils.location('actividades.html'); return false;">Actividades</a></li>
+</ul>
+</div>
+<!--<div class=col_1>
+<ul class=greybox>
+<li><a href="" onclick="x5engine.utils.location('talleres.html'); return false;">Listado</a></li>
+</ul>
+</div>
+--></div>
+</li>
+<li class=menu_right><a href=ensenanza.html onclick="x5engine.utils.location('ensenanza.html'); return false;">Enseñanza</a>
+</li>
+<li class=menu_right><a href="#" class=drop>Colegio</a>
+<div class=dropdown_3columns>
+<div class=col_1>
+<ul class=greybox>
+<li><a href=colegio.html onclick="x5engine.utils.location('colegio.html'); return false;">Acerca</a></li>
+</ul>
+</div>
+<div class=col_1>
+<ul class=greybox>
+<li><a href=board.html onclick="x5engine.utils.location('board.html'); return false;">Director's Board</a></li>
+</ul>
+</div>
+<div class=col_1>
+<ul class=greybox>
+<li><a href=mapa.html onclick="x5engine.utils.location('mapa.html'); return false;">Ubicación</a></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+<div class=banflash>
+	<iframe src="index2profe.html" style="width: 650px; height: 310px; max-width: 100%; overflow: hidden; border: none; padding: 0; margin: 0 auto; display: block"></iframe>
+
+</div>
+<div class="social">
+<table>
+	<tr>
+    	<td><a href="http://correo.kingstownschool.cl" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image45','','images/wbmailf2.png',1)"><img src="images/wbmailf1.png" alt="Acceso a Webmail" width="80" height="29" id="Image45"></a></td>
+    </tr>   
+   <tr>
+    	<td>
+       	  <a href="" target="_blank" onClick="x5engine.utils.location('https://goo.gl/fpZKD3'); return false;" onMouseOver="MM_swapImage('Image25','','images/fanpa.2.png',1)" onMouseOut="MM_swapImgRestore()"><img src="images/fanpa.1.png" alt="Fan Page Oficial The Kingstown School" width="80" height="29" id="Image25"></a></td>
+    </tr>
+	<tr>
+    	<td>
+		  <a href="#" target="_blank" onClick="x5engine.utils.location('https://twitter.com/SchoolKingstown'); return false;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image26','','images/btntwitter2.png',1)"><img src="images/btntwitter1.png" alt="Twitter Oficial The Kingstown School" width="80" height="29" id="Image26"></a></td>
+    </tr>
+	<tr>
+		<td>
+		  <a href="#" target="_blank" onClick="x5engine.utils.location('https://instagram.com/thekingstownschool'); return false;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image27','','images/btninsta2.png',1)"><img src="images/btninsta1.png" alt="Instagram Oficial The Kingstown School" width="80" height="29" id="Image27"></a></td>
+	</tr>
+</table>
+</div>
+
+<div id=login>
+<form id="frm_login" action="https://sistemateced.cl/public/login/ingresartest" name="frm_login" method="post" target="_self">
+    	<h4>Ingreso TECED</h4>        
+		<table>
+			<tr>
+				<td> <input name="login_username" type="text" id="login_username"  maxlength="13" placeholder="&#128272; Ingrese su Run"/></td>
+			</tr>
+			<tr>
+				<td><input name="login_pass" type="password" id="login_pass" maxlength="60" placeholder="&#128272; Ingrese su Password"/></td>	
+			</tr>
+			<tr>
+				<td align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Iniciar Sesión"/></td>
+			</tr>
+		</table>      
+		<input type="text" name="login_plataforma" id="login_plataforma" value="gestionescolar" hidden>
+</form>
+<table>
+<tr>
+<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/CtaPub2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/btncta.20b.png',1)"><img src="images/btncta.20.png" alt="Cuenta Publica" width=100 height=32 id=Image12></a></td>
+<td>
+	<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/RICE21.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image15','','images/btnRegla.fw.png',1)"><img src="images/btnRegla.png" alt="Reglamento Interno" width=100 height=32 id=Image15></a>
+	<!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/simce/19/resumen19.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','images/btnsimce.f2.png',1)"><img src="images/btnsimce.f1.png" alt="Resultados Simce" width=100 height=32 id=Image13></a>-->
+	</td>
+</tr>
+<tr>
+<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/PEI2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','images/btnPro.fw.png',1)"><img src="images/btnPro.png" alt="Proyecto Educativo" width=100 height=32 id=Image14></a>
+</td>
+<td>
+	<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/staff2022.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image18','','images/btnProfe.fw.png',1)"><img src="images/btnProfe.png" alt="Equipos de Profesores" width=100 height=32 id=Image18></a>
+	<!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/RICE21.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image15','','images/btnRegla.fw.png',1)"><img src="images/btnRegla.png" alt="Reglamento Interno" width=100 height=32 id=Image15></a>-->
+</td>
+</tr>
+<!--<tr>
+<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'flash/15/simce/siming.swf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image16','','images/btnIngles.fw.png',1)"><img src="images/btnIngles.png" alt="Resultados Simce Inglés" width=100 height=32 id=Image16></a>
+</td>
+<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/talleres2018.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image17','','images/btntaller.f2.png',1)"><img src="images/btntaller.f1.png" alt=Actividades width=100 height=32 id=Image17></a>
+</td>
+</tr>-->
+<tr>
+<td><!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/staff2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image18','','images/btnProfe.fw.png',1)"><img src="images/btnProfe.png" alt="Equipos de Profesores" width=100 height=32 id=Image18></a>-->
+</td>
+<td><!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/subcentro19.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image19','','images/btnReu.fw.png',1)"><img src="images/btnReu.png" alt="Reuniones Subcentro" width=100 height=32 id=Image19></a>-->
+</td>
+</tr>
+</table>
+</div>
+<div id=main>
+	<table>
+    	<tr>
+        	<td><a href="http://www.kingstownschool.cl"><i class="sprite sprite-home1"></i></a></td>
+            <td>Profesores - <a href="profes.html">Staff</a></td>
+        </tr>
+    </table>
+<h2>PROFESORES</h2>
+<h3>TEACHING STAFF 2021</h3>
+<table class=table1>
+<thead>
+<tr>
+<th scope=col abbr="N°">N°</th>
+<th scope=col abbr="Teacher's Name">Teacher's Name</th>
+<th scope=col abbr="Professional Degree">Professional Degree</th>
+<th scope=col abbr="Academic Degree">Academic Degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mrs. Abarca Villalobos María</td>
+<td>Religion and Moral</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Mrs. Aravena Miranda Natalia</td>
+<td>Kindergarten Teacher</td>
+<td>Bachelor's degree in Preschool Education</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Miss Ayala Contreras Daniela</td>
+<td>Mathematics</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Miss Bahamonde Pérez Loreto</td>
+<td>Psychologist</td>
+<td>Bachelor's degree in Psychologist</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>Mrs. Bernal Zamora Sharloth</td>
+	<td>Elementary Education</td>
+	<td>Bachelor's degree in Education</td>
+</tr>	
+<tr>
+<td>6</td>
+<td>Mr. Bonniard Vivanco Philippe</td>
+<td>English</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Miss Camus Zapata Tyare</td>
+<td>Elementary Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Mr. Cantuarias Fuica Gonzalo</td>
+<td>Music Art</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Miss Castillo Straube Bianca</td>
+<td>Biology and Science</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Miss Castro Cabrera Carolina</td>
+<td>History</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Miss Castro Vargas Catalina</td>
+<td>Mathematics</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Miss Cifuentes Romo Antonia</td>
+<td>Kindergarten Teacher</td>
+<td>Bachelor's degree in Preschool Education</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Miss Cosmelli Rodríguez Pía</td>
+<td>Physical Education</td>
+<td>Bachelor's degree in Education</td>
+	
+</tr>
+<tr>
+<td>14</td>
+<td>Mrs. Crichton Campodonico Daniela</td>
+<td>Spanish Language</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Mr. Díaz Henríquez Leonardo</td>
+<td>History</td>
+<td>Bachelor's degree in Education</td>
+</tr>	
+<tr>
+<td>16</td>
+<td>Miss Escarpentier Norman Anita</td>
+<td>English</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+	<td>17</td>
+	<td>Miss Fernández Fuentes Natalia</td>
+	<td>Science</td>
+	<td>Bachelor's degree in Education</td>
+</tr>
+<tr>	
+<td>18</td>
+<td>Mr Fernández Troncoso Pablo Miguel</td>
+<td>Physical Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Miss Flores Ortiz Catalina Francisca</td>
+<td>Psychologist</td>
+<td>Bachelor's degree in Education</td>	
+</tr>	
+<tr>
+<td>20</th>
+<td>Mr. Guerra Ulloa Freddy</td>
+<td>Chemistry and Science</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Miss Hevia Páez Lina</td>
+<td>Principal</td>
+<td>Bachelor's degree in Education<br/>
+Post Graduate degree in Educational Planning and Assessment<br/>
+Master in Art in Education Management</td>
+</tr>
+<tr>
+	<td>22</td>
+	<td>Miss Lagunas Ivani Mariafernanda</td>
+	<td>Psychologist</td>
+	<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Miss Martínez Morales Alejandra</td>
+<td>Curriculum Oversight Committe (UTP) / Elementary Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<!--<tr>
+<td>28</td>
+<td>Mr. Molina Pérez Jaime</td>
+<td>Principal / History</td>
+<td>Bachelor's degree in Education<br/>
+Master's degree in Educational Leadership and Management<br/>
+Major in History of Asia Pacific<br/>
+Certificate Program in School Leadership</td>
+</tr>-->
+<tr>
+<td>24</td>
+<td>Miss Montino Ramos Alexandra</td>
+<td>Physical Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Mr. Muñoz Astudillo Andrés</td>
+<td>Physical Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Mrs. Muñoz Guaquin Elsa Cristina</td>
+<td>Elementary Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Mrs. Muñoz Zamora Nicole</td>
+<td>Philosophy</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+
+<tr>
+<td>28</th>
+<td>Mr. Olivares López Raúl</td>
+<td>English</td>
+<td>Bachelor's degree in Education<br/></td>
+</tr>
+
+<tr>
+<td>29</td>
+<td>Mr. Orellana Muñoz Marcelo</td>
+<td>Technology Education</td>
+<td>Bachelor's degree in Education<br/></td>
+</tr>
+<tr>
+<td>30</td>
+<td>Mr. Ossandón González Nicholás</td>
+<td>English</td>
+<td>Bachelor's degree in Education<br/>
+Minor in Translation and Consecutive Interpreting</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Mr. Parada Toledo Luis Mauricio</td>
+<td>Physical Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+	<td>32</td>
+	<td>Mrs. Parra Norambuena María José</td>
+	<td>Psychologist</td>
+	<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Miss Pereira Torres Karina</td>
+<td>Elementary Education</td>
+<td>Bachelor's degree in Education<br/>
+Master's degree in Educational Leadership and Management</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Miss Pérez Muñoz Angélica</td>
+<td>Kindergarten Teacher</td>
+<td>Bachelor's degree in Preschool Education</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Mr. Plaza Santana Jesús</td>
+<td>General Inspector<br/>Biology and Science</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+	<td>36</td>
+	<td>Miss Ramírez Ulloa Anita</td>
+	<td>Spanish Language</td>
+	<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+	<td>37</td>
+	<td>Miss Ramos Palta Krasna Denise</td>
+	<td>Psychologist</td>
+	<td>Bachelor's degree in Education</td>
+</tr>	
+<tr>
+<td>38</td>
+<td>Miss Rojas Martínez María</td>
+<td>Religion and Moral</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Mrs. Román Toro Marcela</span></td>
+<td>Visual Art</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Miss Salazar Oyarce Carolina</td>
+<td>Psychologist</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Mrs. Salgado Peters Claudia</td>
+<td>Psychologist</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Miss Sepúlveda Aguirre Paula</td>
+<td>Mathematics</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Mrs. Soto Jamet Ingrid</td>
+<td>Elementary Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Miss Tadic Peters Milena</td>
+<td>Psychologist</td>
+<td>Bachelor's degree in Education</td>	
+</tr>
+<tr>
+	<td>45</td>
+	<td>Mr. Varas Reyes Pedro</td>
+	<td>Physical Education</td>
+	<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Mrs. Vásquez Bernales Melissa</td>
+<td>Elementary Education</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Mr. Vásquez Palma Giussepe</td>
+<td>History</td>
+<td>Bachelor's degree in Education<br/>
+Major in History of Art and Conservation of the Cultural Patrimony</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Mrs. Vásquez Zavala Katherina</td>
+<td>Kindergarten Teacher</td>
+<td>Bachelor's degree in Preschool Education</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Mr. Vega Farías Oscar</td>
+<td>Manager school coexistence / Chemistry and Science</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+<tr>
+<td>50</td>	
+<td>Miss Yuivar Carneiro Ana</td>
+<td>Academic coordinator / Biology and Science</td>
+<td>Bachelor's degree in Education</td>	
+</tr>
+<tr>
+<td>51</td>
+<td>Mrs. Zegers Zuleta Carolina</td>
+<td>Spanish Language</td>
+<td>Bachelor's degree in Education</td>
+</tr>
+</tbody>
+</table>
+<div class=separator></div>
+<footer>
+ <div id="Stage" class="EDGE-11664260"></div>  
+</footer>
+</div>
+</header>
+</div>
+</body>
+</html>
+

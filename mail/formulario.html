@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Formulario de contacto HTML5/CSS3/PHP</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="form-estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+</head>
+
+<body>
+ 
+<aside> 
+
+<H1>Formulario de contacto </H1>
+<a href="http://www.kingstownschool.cl">Los campos marcados (*) son obligatorios</a>
+<hr>
+<FORM ACTION="http://www.kingstownschool.cl/mail/enviar_email.php" METHOD="post"> 
+<table width="100%">
+	<tr>
+		<td><label for="nombre">Nombre</label>(*)</td>
+		<td><INPUT type="text" size=36 name="nombre"></INPUT></td>
+	</tr>
+	<tr>
+		<td><label for="apellido">Apellido</label>(*)</td>
+		<td><INPUT type="text" size=36 name="apellido"></INPUT></td>
+	</tr>
+	<tr>
+		<td><label for="email">E-mail</label>(*)</td>
+		<td><INPUT type="email" size=36 name="email"></INPUT></td>
+	</tr>
+	<tr>
+		<td><label for="telephone">Teléfono</label></td>
+		<td><INPUT type="tel" size=36 name="telephone"></INPUT></td>		
+	</tr>
+	<tr>
+		<td><label for="asunto">Asunto</label>(*)</td>
+		<td>
+			<SELECT name="asunto" size="1">
+				<option value="Sugerencia">Sugerencia</option>
+				<option value="Consulta">Consulta</option>
+				<option value="Solicitud">Solicitud</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td><label for="correod">Para</label>(*)</td>
+		<td>
+			<select name="correod" size="1">
+				<option value="linahevia@kingstownschool.cl">Dirección</option>
+				<option value="ayuivar@kingstownschool.cl">Coordinación Académica</option>
+				<option value="alejandrautp@kingstownschool.cl">UTP</option>
+				<option value="jplazainsp@kingstownschool.cl">Inspectoría</option>
+				<option value="ecevega@kingstownschool.cl">Encargado Convivencia Escolar</option>
+				<option value="deptopsico@kingstownschool.cl">Psicopedagogía</option>
+				<option value="cgpaks@kingstownschool.cl">Centro General de Padres</option>
+				<option value="caks@kingstownschool.cl">Centro de Alumnos</option>
+				<option value="marcelo.tapia@kingstownschool.cl">Webmaster</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td><label for="message">Mensaje</label>(*)</td>
+		<td><TEXTAREA rows=5 cols=30 name="message"></TEXTAREA></td>
+	</tr>
+	<tr>	
+				<td><INPUT type="reset" value="Borrar"></td>
+				<td><INPUT type="submit" value="Enviar"><a href="http://www.kingstownschool.cl/mail/enviar_email.php"></a></td>	
+					
+	</tr>
+</table> 
+
+</FORM> 
+
+</aside> 
+
+</body>
+
+<footer>
+    <a href="http://www.kingstownschool.cl">Formulario de contacto - www.kingstownschool.cl</a>
+  </footer>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Colegio de Enseñanza Parvularia, Básica y Científico Humanista, ubicado en el sector del Mirador de Reñaca." />
+<meta name="keywords" content="Colegio Particular Subvencionado, Escuela, Liceo, Jardín Infantil." />
+<meta name="author" content="Kingstown School." />
+<meta name="owner" content="Sociedad Educacional Bosques de Santa Julia S.A." />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="index,follow" />
+		
+<title>The Kingstown School</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style/style.css" media="screen,print" /> 
+<link rel="stylesheet" type="text/css" href="css/gwdpage_style.css"/>
+<link rel="stylesheet" type="text/css" href="css/gwdpagedeck_style.css"/>
+<link rel="stylesheet" type="text/css" href="css/gwddoubleclick_style.css"/>
+<link rel="stylesheet" type="text/css" href="css/gwdimage_style.css"/>
+<link rel="stylesheet" type="text/css" href="css/gwd-ks-style.css"/>	
+	
+<!--[if IE]>
+<script>
+  document.createElement('header');
+  document.createElement('footer');
+  document.createElement('section');
+  document.createElement('nav');
+</script>
+<![endif]-->
+<!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<script async src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script type="text/javascript" src="res/jquery.js"></script>
+<script type="text/javascript" src="res/jquery.scrollTop.js"></script>
+<script type="text/javascript" src="res/x5engine.js"></script>
+<script type="text/javascript" src="res/x5cartengine.js"></script>
+<script src="https://sistemateced.cl/public/assets/js/jqueryrut.js"></script>	
+<script async type="text/javascript" src="res/l10n.js"></script>
+<script type="text/javascript" src="res/x5settings.js"></script>
+<script type="text/javascript" charset="utf-8" src="Scripts/footerks_edgePreload.js"></script>
+ 
+<script type="text/javascript">
+$(function(){		   
+		scrollTop({
+		color:"grey", 
+		top:400, 
+		time:500,  
+		position:"middle", 
+		speed: 300 
+		});
+	});
+</script>
+<script>
+$(document).ready(function() {
+
+	$("input#login_username").rut({
+		formatOn: 'keyup',
+	    minimumLength: 8, // validar largo mínimo; default: 2
+		validateOn: 'change' // si no se quiere validar, pasar null
+	});
+
+	// es posible pasar varios eventos separados por espacio, útil
+	// para validar el rut aún cuando el browser autocomplete el campo
+	$("input#login_username").rut({validateOn: 'change keyup'});
+
+	// si no se quiere mostrar el punto para separador de miles, 
+	// pasar la opción useThousandsSeparator : false
+	$("input#login_username").rut({useThousandsSeparator : true});
+
+$("#btn_submit").click(function(event){
+        event.preventDefault();
+        if($("#login_username").val().length==0)
+        {
+        	alert('Ingrese RUT del Usuario',"Faltan datos");
+			return false;
+        }
+        if($("#login_pass").val().length==0)
+        {
+        	alert('Ingrese Password',"Faltan datos");
+			return false;
+        }
+    	event.preventDefault();
+    	var main=$("#main");
+    	//scroll to top
+    	main.animate({
+    		scrollTop: 0
+    	}, 500);
+    	main.addClass("slideDown");
+
+    	// send username and password to php check login
+        var url = "https://sistemateced.cl/public/login/ingresar";      
+    	$.ajax({
+    		url: url,
+             data: $("#frm_login").serialize(), 
+             type: "POST", 
+             dataType: 'json',
+    		success: function (e) {
+                console.log(e.status);
+
+                 if(e.status == 1) 
+                 {
+                    $("#frm_login").submit();
+
+                 } else  {
+                     alert("Error");
+                 }
+    		}
+    	});
+
+    });
+});
+</script>
+	
+<script type="text/javascript">	
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<style>
+        .edgeLoad-EDGE-11664260 { visibility:hidden; }
+</style>
+<!-- Estilos banner -->  
+  
+  <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox{overflow:hidden}</style>
+  <style type="text/css" id="gwd-text-style">p{margin:0px}h1{margin:0px}h2{margin:0px}h3{margin:0px}</style>  
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+  
+<!-- Fin Estilos Banner -->	
+	
+<style>@font-face{font-family:'Graduate';font-style:normal;font-weight:400;src:local('Graduate'), local('Graduate-Regular'), url(http://fonts.gstatic.com/s/graduate/v4/xBquLOzic3rRbJsTs3BiEPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+@font-face{font-family:'Oleo Script';font-style:normal;font-weight:400;src:local('Oleo Script'), local('OleoScript-Regular'), url(http://fonts.gstatic.com/s/oleoscript/v5/_weQNDK6Uf40CiGFKBBUjiYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');unicode-range:U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Oleo Script';font-style:normal;font-weight:400;src:local('Oleo Script'), local('OleoScript-Regular'), url(http://fonts.gstatic.com/s/oleoscript/v5/_weQNDK6Uf40CiGFKBBUjo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}</style>
+</head>
+<body id="body2" onLoad="MM_preloadImages('images/bntCta.fw.png','images/btnsimce.fw.png','images/btnPro.fw.png','images/btnRegla.fw.png','images/btnIngles.fw.png','images/btnActi.fw.png','images/btnProfe.fw.png','images/btnReu.fw.png')"><div class="container">
+  <header>
+    <div id="logo"><a href="http://www.kingstownschool.cl" target="_self"><img src="images/logo.png" alt="Kingstown Logo" border="0" width="97" height="60" /></a></div>
+    <h2>THE KINGSTOWN SCHOOL</h2>
+    <ul id="menu">           
+            <li class="menu_right"><a href="" onClick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'mail/formulario.html', width: 500, height: 550, text: ''}]}, 0, this);">Contacto</a>
+            </li>
+             <li class="menu_right"><a href="#" onClick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/circu/22/admision.pdf', width: 870, height: 560, text: ''}]}, 0, this);" class="dropF">Admisión 2022</a>
+            	
+            </li> 
+            <!-- Aquí menu CGPA -->
+            <li class="menu_right"><a href="#" class="drop">C.G.P.A.</a>
+            	<div class="dropdown_3columns">                	
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="" onClick="x5engine.utils.location('cgpa.html'); return false;">Acerca</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="" onClick="x5engine.utils.location('CGPAcircu.html'); return false;">Documentos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="" onClick="x5engine.utils.location('CGPAmedia.html'); return false;">Media</a></li>
+                        </ul>
+                    </div>
+                </div>	
+            </li>
+            <li class="menu_right"><a href="#" class="drop">Profesores</a>
+            	<div class="dropdown_2columns">
+                	<div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="profes.html" onClick="x5engine.utils.location('profes.html'); return false;">Staff</a></li>
+                        </ul>
+                    </div>
+                   <!-- <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="" onClick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/hatencion19.pdf', width: 870, height: 530, text: ''}]}, 0, this);">H. Atención</a></li>
+                        </ul>
+                    </div>-->
+                    
+                </div>
+            </li>
+             <li class="menu_right"><a href="#" class="drop">Talleres</a>
+            	<div class="dropdown_2columns">
+                	<div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="actividades.html" onClick="x5engine.utils.location('actividades.html'); return false;">Actividades</a></li>
+                        </ul>
+                    </div>
+                   <!-- <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="" onClick="x5engine.utils.location('talleres.html'); return false;">Listado</a></li>
+                        </ul>
+                    </div>-->
+                </div>
+            </li>
+            <li class="menu_right"><a href="ensenanza.html" onClick="x5engine.utils.location('ensenanza.html'); return false;">Enseñanza</a>            	
+            </li>
+            <li class="menu_right"><a href="#" class="drop">Colegio</a>
+            	<div class="dropdown_3columns">                	
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="colegio.html" onClick="x5engine.utils.location('colegio.html'); return false;">Acerca</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="board.html" onClick="x5engine.utils.location('board.html'); return false;">Director's Board</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1">
+                    	<ul class="greybox">
+                        	<li><a href="mapa.html" onClick="x5engine.utils.location('mapa.html'); return false;">Ubicación</a></li>
+                        </ul>
+                    </div>
+                </div>	
+            </li>           
+        </ul>  
+    <div class="banflash">
+		<iframe src="index2colegio.html" style="width: 650px; height: 310px; max-width: 100%; overflow: hidden; border: none; padding: 0; margin: 0 auto; display: block"></iframe>
+	 </div>	
+    <div class="social">
+<table>
+	<tr>
+    	<td><a href="http://correo.kingstownschool.cl" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image45','','images/wbmailf2.png',1)"><img src="images/wbmailf1.png" alt="Acceso a Webmail" width="80" height="29" id="Image45"></a></td>
+    </tr>
+    
+    <!--<tr>
+    	<td><a href="http://psicopedagogaks.blogspot.com/" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image47','','images/pspksf2.png',1)"><img src="images/pspksf1.png" alt="Acceso a Psicopedagogía KS" width="80" height="29" id="Image47"></a></td>
+    </tr>   -->
+    <tr>
+    	<td><a href="" onClick="x5engine.utils.location('https://www.facebook.com/kingstown.times/'); return false;" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image48','','images/ktimesf2.png',1)"><img src="images/ktimesf1.png" alt="Acceso a periodico KS" width="80" height="29" id="Image48"></a></td>
+    </tr>  
+     <tr>
+    	<td><a href="" onClick="x5engine.utils.location('http://orientacionks.blogspot.cl/'); return false;" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image49','','images/orienb.png',1)"><img src="images/oriena.png" alt="Acceso a Orientación KS" name="Image49" width="80" height="29" id="Image49"></a></td>
+    </tr>
+    <tr>
+    	<td>
+       	  <a href="" target="_blank" onClick="x5engine.utils.location('https://goo.gl/fpZKD3'); return false;" onMouseOver="MM_swapImage('Image25','','images/fanpa.2.png',1)" onMouseOut="MM_swapImgRestore()"><img src="images/fanpa.1.png" alt="Fan page oficial The Kingstown School" width="80" height="29" id="Image25"></a></td>
+    </tr>         
+</table>
+</div>
+
+  <div id="login">
+	<form id="frm_login" action="https://sistemateced.cl/public/login/ingresartest" name="frm_login" method="post" target="_self">
+    	<h4>Ingreso TECED</h4>        
+		<table>
+			<tr>
+				<td> <input name="login_username" type="text" id="login_username"  maxlength="13" placeholder="&#128272; Ingrese su Run"/></td>
+			</tr>
+			<tr>
+				<td><input name="login_pass" type="password" id="login_pass" maxlength="60" placeholder="&#128272; Ingrese su Password"/></td>	
+			</tr>
+			<tr>
+				<td align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Iniciar Sesión"/></td>
+			</tr>
+		</table>      
+		<input type="text" name="login_plataforma" id="login_plataforma" value="gestionescolar" hidden>
+</form>
+    <table>
+    	<tr>
+        	<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/CtaPub2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image12','','images/btncta.20b.png',1)"><img src="images/btncta.20.png" alt="Cuenta Publica" width="100" height="32" id="Image12"></a></td>
+            <td>
+				<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/RICE21.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image15','','images/btnRegla.fw.png',1)"><img src="images/btnRegla.png" alt="Reglamento Interno" width="100" height="32" id="Image15"></a>
+				<!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/simce/19/resumen19.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image13','','images/btnsimce.f2.png',1)"><img src="images/btnsimce.f1.png" alt="Resultados Simce" width="100" height="32" id="Image13"></a>-->
+			</td>
+        </tr>
+        <tr>
+        	<td><a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/PEI2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image14','','images/btnPro.fw.png',1)"><img src="images/btnPro.png" alt="Proyecto Educativo" width="100" height="32" id="Image14"></a>
+            </td>
+            <td>
+				<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/staff2022.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image18','','images/btnProfe.fw.png',1)"><img src="images/btnProfe.png" alt="Equipos de Profesores" width="100" height="32" id="Image18"></a>
+				<!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/RICE21.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image15','','images/btnRegla.fw.png',1)"><img src="images/btnRegla.png" alt="Reglamento Interno" width="100" height="32" id="Image15"></a>-->
+            </td>
+        </tr>
+        <!--<tr>
+        	<td><a  href="docs/SIMCE_english_2010.pdf" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'flash/15/simce/siming.swf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image16','','images/btnIngles.fw.png',1)"><img src="images/btnIngles.png" alt="Resultados Simce Inglés" width="100" height="32" id="Image16"></a>
+            </td>
+            <td><a  href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/talleres2018.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image17','','images/btntaller.f2.png',1)"><img src="images/btntaller.f1.png" alt="Actividades" width="100" height="32" id="Image17"></a>
+            </td>
+        </tr>-->
+        <tr>
+        	<td><!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/staff2021.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image18','','images/btnProfe.fw.png',1)"><img src="images/btnProfe.png" alt="Equipos de Profesores" width="100" height="32" id="Image18"></a>-->
+            </td>
+            <td><!--<a href="" onclick="return x5engine.imShowBox.Show({ startIndex: 0, media:[{type: 'iframe', url: 'docs/subcentro19.pdf', width: 870, height: 530, text: ''}]}, 0, this);" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image19','','images/btnReu.fw.png',1)"><img src="images/btnReu.png" alt="Reuniones Subcentro" width="100" height="32" id="Image19"></a>-->
+            </td>
+        </tr>
+    </table>	 		 
+
+  </div>
+    <div id="main">
+    	<table>
+        	<tr>
+            	<td><a href="http://www.kingstownschool.cl"><i class="sprite sprite-home1"></i></a></td>
+                <td>El Colegio - <a href="colegio.html">Acerca</a></td>
+            </tr>
+        </table>
+      <h2>Historical Review</h2>
+      <sidecoci1>
+      		<div class="events" id="tile">Cuando se cree firmemente que una institución educacional debe  otorgar   un servicio social y de amor a las nuevas generaciones, se establece    entonces la necesidad de concebir un plantel que reúna las   características  deseables y más apropiadas para que los estudiantes   puedan alcanzar un  desarrollo personal en óptimas condiciones.<br>
+      		  En sintonía con esta línea de pensamiento, crear el "<strong>The Kingstown School</strong>"   fue un anhelo hecho realidad. Una  pequeña ciudad donde se forjaran   hombres y mujeres, personas íntegras,  ciudadanos del futuro y capital   humano de calidad, para incorporarse a esta  sociedad del conocimiento   multimedial.<br>
+            Dado los requerimeintos propios que demanda implementar la Jornada Escolar Completa, las profesoras fundadoras de &quot;The Kingstown School&quot; al momento de adquirir el terreno el 12 de </div>
+      </sidecoci1>
+      <div class="photocole1">
+      </div>
+      <div class="photocole2"></div>
+      <sidecoci2>
+      		<div class="events" id="tile">
+            	 enero de 1998, privilegiaron el espacio  físico para brindar confort y armonía   a las diversas áreas en las que se  desarrollaría el trabajo   pedagógico. El 1 de Octubre del año 2001, se dan  inicio a los trabajos   de construcción del futuro plantel educacional. Allí se  plasmarían, en   diferentes materiales, los planos soñados para cada rincón de  esta   inmensa infraestructura.<br>
+            	 El Ministerio de Educación, valorando la presencia importante de este   Plantel  en el sector de Bosques de Santa Julia, otorga el   reconocimiento oficial como  entidad cooperadora de la Función del   Estado el día 21 de Febrero del 2003,  según consta en la <strong>Res. Ex. N° 6006/2003</strong>.<br>El día 28 de Febrero del 2003, las Profesoras fundadoras observan, con satisfacción, culminada en su totalidad la construcción de esta gran obra. Al recorrer cada una de sus dependencias, aprecian con orgullo la concreción de sus sueños.<br>
+            	 Muchos rostros pequeños y curiosos asomaron por primera vez en las relucientes aulas el 1 de marzo del 2003, día en el que se
+
+
+      		</div>
+      </sidecoci2>
+      <centercoci>
+      	<div class="events" id="tile"><br>
+        	iniciaron oficialmente las  actividades académicas. Los primeros fundadores, conocían su reino.<br>
+        	&quot;The Kingstown School" es una Institución Educativa de carácter católico, dependiente de Sociedad Educacional Bosques de Santa Julia S.A. y fundado por las Educadoras señora María Graciela Pérez San Martín y señora Raquel Guerrero Ovalle. Ubicado en los Bosques de Santa Julia, el establecimiento educacional está autorizado para impartir Educación Prebásica, Educación Básica y Educación Media Científico-Humanista en Jornada Escolar Completa, desde Sala Cuna hasta Cuarto Año Medio.<br>La gestión educativa del establecimiento tiene por finalidad otorgar educación integral y de calidad a sus estudiantes. Para ello, cuenta con un innovador Proyecto Educativo Institucional que se fundamenta en la exigencia académica, el idioma Inglés, el rigor disciplinario, el deporte y una sólida formación en valores.<br>En un ambiente de sana convivencia escolar, promueve una cultura de sólidos principios cristianos para formar personas íntegras, competentes y autónomas; de profundos conocimientos, amplia cultura y firmes convicciones para un actuar éticamente correcto.<br>Fortalece en sus alumnos la formación intrapersonal, moral y social, promoviendo el logro de aprendizajes significativos vinculados a la capacidad para desenvolverse académica y culturalmente con solvencia y asertividad.<br>Su actual Director  señor Jaime Molina Pérez, junto  a su equipo directivo de vasta experiencia  y cuerpo docente, han dado impulso a una serie de Proyectos interdisciplinarios tendientes a desarrollar con innovación pedagógica, una intensiva malla  curricular y múltiples actividades extraescolares complementarias para formar alumnos socialmente inteligentes y autosuficientes en sus proyectos de Vida.<br>La Comunidad The Kingstown School asume los desafíos educativos del milenio con vocación de servicio y visión de futuro. </div>
+            <table align="center">
+        	<tr>
+            	<td><button class="css3button" onClick="x5engine.utils.location('board.html'); return false;">School Director's Board</button></td>
+                
+                <td><button class="css3button" onClick="x5engine.utils.location('mapa.html'); return false;">Mapa Ubicación</button></td>                
+            </tr>
+        </table>
+
+      </centercoci>     
+      
+      <footer>     
+        <div id="Stage" class="EDGE-11664260"></div>         
+  </footer>    
+    </div> 
+  </header>    
+</div>
+</body> 
+</html>

@@ -1,0 +1,36 @@
+order allow, deny
+deny from all
+
+#charset
+AddCharset utf-8 .html
+AddCharset utf-8 .js
+
+# compresion
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE image/jpeg
+AddOutputFilterByType DEFLATE image/png
+</IfModule>
+
+ExpiresActive On
+ExpiresByType images/gif A432000
+ExpiresByType images/jpg A432000
+ExpiresByType images/jpeg A432000
+ExpiresByType images/png A432000
+ExpiresByType images/ico A432000
+ExpiresByType images/bmp A432000
+ExpiresByType text/css A432000
+ExpiresByType text/html A86400
+ExpiresByType text/javascript A432000
+ExpiresByType application/javascript A432000
+ExpiresByType application/x-javascript A432000
+
